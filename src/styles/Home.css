@@ -1,0 +1,44 @@
+.hero-section {
+    position: relative;
+    height: 100vh; /* Full screen height */
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+  }
+  
+  .background-video {
+    
+    width: 100%;
+    height: 85%;
+    object-fit: cover; /* Ensures the video covers the entire section without distortion */
+    z-index: -9999; /* Ensures the video stays behind the content */
+    filter: brightness(50%); /* Darkens the video */
+  }
+  
+  .hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    z-index: 1; /* Ensures the text is above the video */
+  }
+  
+  .hero-content h1 {
+    font-size: 3rem;
+    font-weight: bold;
+  }
+  
+  .hero-content p {
+    font-size: 1.5rem;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+.anime-list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem;
+}
