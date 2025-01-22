@@ -1,14 +1,11 @@
 .navbar {
-    position: absolute;
     display: flex;
     width: 100%;
-    top: 0;
-    left: 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: #000000;
     justify-content: space-between; /* Adjust spacing for larger screens */
     align-items: center;
     padding: 1rem 2rem;
-    background-color: transparent;
     color: white;
     box-sizing: border-box; /* Ensure padding is accounted for */
 }
@@ -36,16 +33,12 @@
 
 .search-wrapper {
     position: relative;
-    width: 100%;
-    max-width:700px;
-   
 }
 
 .navbar-search {
     padding: 1rem;
     padding-right: 2rem; /* Space for the icon */
     border-radius: 10px;
-    width: 100%;
     background-color: rgba(255, 255, 255, 0.1);
 }
 

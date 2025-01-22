@@ -10,8 +10,8 @@ body {
   line-height: 1.6;
   margin: 0;
   padding: 0;
-  background-color: #f5f5f5;
-  color: #333;
+  background-color: #0e0c0c;
+  color:white;
 }
 
 /* Headings - More Dynamic */
@@ -37,7 +37,6 @@ h3 {
 p {
   font-size: 1.125rem; /* 18px */
   margin-bottom: 1.5rem;
-  color: #333;
 }
 
 /* Accent Text */

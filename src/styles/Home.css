@@ -1,44 +1,55 @@
 .hero-section {
     position: relative;
-    height: 100vh; /* Full screen height */
+    height: 70vh; /* Reduced height */
     width: 100%;
-    display:flex;
+    display: flex;
     flex-direction: column;
-  }
-  
-  .background-video {
-    
+}
+
+.background-video {
     width: 100%;
     height: 85%;
     object-fit: cover; /* Ensures the video covers the entire section without distortion */
     z-index: -9999; /* Ensures the video stays behind the content */
-    filter: brightness(50%); /* Darkens the video */
-  }
-  
-  .hero-content {
+    filter: brightness(40%); /* Darkens the video */
+}
+
+.hero-content {
+    background-color: rgba(255, 255, 255, 0.8);
     position: absolute;
-    top: 50%;
+    top: 10%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
+    transform: translateX(-50%);
+    height: auto;
+    width: 30%; /* Reduced width */
+    color: #333;
     text-align: center;
     z-index: 1; /* Ensures the text is above the video */
-  }
-  
-  .hero-content h1 {
-    font-size: 3rem;
+    padding: 30px 40px; /* Increased padding */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease-in-out;
+    opacity: 1;
+}
+
+.hero-title {
+    font-size: 2rem; /* Reduced font size */
     font-weight: bold;
-  }
-  
-  .hero-content p {
-    font-size: 1.5rem;
+}
+
+.hero-description {
+    font-size: 1.2rem; /* Reduced font size */
     max-width: 600px;
     margin: 0 auto;
-  }
-  
-.anime-list{
+}
+
+.anime-list {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
     padding: 1rem;
+}
+
+.anime-container{
+    border:1px solid white;
 }
