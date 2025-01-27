@@ -3,24 +3,31 @@
     width: 100%;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     background-color: #000000;
-    justify-content: space-between; /* Adjust spacing for larger screens */
+    justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    color: white;
-    box-sizing: border-box; /* Ensure padding is accounted for */
+    box-sizing: border-box;
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Ensure navbar stays on top of other content */
 }
 
 .navbar-logo a {
     color: white;
     text-decoration: none;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: bold;
+    transition: color 0.3s;
+}
+
+.navbar-logo a:hover {
+    color: #b7aaa2;
 }
 
 .navbar-links {
     list-style: none;
     display: flex;
-    gap: 1rem; /* Maintain consistent spacing between links */
+    gap: 1.5rem;
     padding: 0;
     margin: 0;
 }
@@ -28,42 +35,24 @@
 .navbar-links a {
     color: white;
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+    padding: 0.5rem 0; /* Add padding for better click area */
 }
 
-.search-wrapper {
-    position: relative;
+.navbar-links a:hover {
+    color: #b7aaa2;
 }
-
-.navbar-search {
-    padding: 1rem;
-    padding-right: 2rem; /* Space for the icon */
-    border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.1);
-}
-
-.search-icon {
-    position: absolute;
-    right: 0.75rem;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 1rem;
-    color: #ccc;
-    pointer-events: none; /* Prevent interaction with the icon */
-}
-
 
 .sign {
     display: flex;
-    justify-content: space-around;
-    gap: 0.5rem; /* Consistent spacing between buttons */
-    padding: 0.5rem;
-    width: auto; /* Adapt width to content */
-    flex-wrap: wrap; /* Adjust layout for smaller screens */
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
 }
 
-.sign button {
-    border-radius: 5%;
+.sign a, .sign button {
+    border-radius: 20px;
     border: 1px solid transparent;
     padding: 0.8rem 1.5rem;
     font-size: 1rem;
@@ -72,14 +61,72 @@
     background-color: #1a1a1a;
     color: white;
     cursor: pointer;
-    transition: border-color 0.25s;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    text-decoration: none; /* Ensure links look like buttons */
 }
 
-.sign button:first-child {
+.sign a:first-child, .sign button:first-child {
     background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.sign button:nth-child(2) {
+.sign a:first-child:hover, .sign button:first-child:hover {
+    background-color: #b7aaa2;
+    color: white;
+}
+
+.sign a:nth-child(2), .sign button:nth-child(2) {
     background-color: white;
     color: black;
+}
+
+.sign a:nth-child(2):hover, .sign button:nth-child(2):hover {
+    background-color: #b7aaa2;
+    color: white;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .navbar {
+        flex-wrap: wrap;
+        padding: 1rem;
+    }
+
+    .navbar-logo {
+        margin-bottom: 1rem;
+    }
+
+    .navbar-links {
+        gap: 1rem;
+    }
+
+    .sign {
+        justify-content: flex-end;
+        gap: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar-links {
+        flex-wrap: wrap;
+        gap: 0.8rem;
+        justify-content: center;
+    }
+
+    .sign {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .sign a, .sign button {
+        width: 100%; /* Full-width buttons on small screens */
+        text-align: center;
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
 }

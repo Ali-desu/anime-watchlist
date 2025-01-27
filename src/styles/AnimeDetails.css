@@ -1,0 +1,96 @@
+.anime-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    background-color: #1a1a1a; /* Slightly lighter black for better contrast */
+    border: 1px solid #ffffff; /* Keep the white border */
+    color: #ffffff; /* White text for readability */
+    border-radius: 10px; /* Rounded corners */
+    max-width: 1200px;
+    margin: 20px auto; /* Center the content */
+    font-size:0.8rem;
+}
+
+.img {
+    flex: 1 1 300px; /* Ensure the image takes a fixed width */
+    max-width: 300px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.img img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px; /* Rounded corners for the image */
+}
+
+.details {
+    flex: 2 1 600px; /* Make details take more space */
+    padding: 20px;
+    background-color: #1f1f1f;
+    border: 1px solid #ffffff;
+    border-radius: 10px;
+}
+
+.details h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #ffcc00; /* Highlight the title in yellow */
+}
+
+.details p {
+    margin: 8px 0;
+    line-height: 1.6; /* Increase readability */
+}
+
+.details strong {
+    color: #ffcc00; /* Highlight key labels */
+}
+
+.details .buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.details .buttons button {
+    background-color: #ffffff;
+    color: #000;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.details .buttons button:hover {
+    transform: scale(1.05);
+    background-color: #a9e600;
+}
+
+
+.buttons button {
+    margin-right: 1rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .buttons button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+  
+  .buttons button.favorited {
+    background-color: #ff4081;
+    color: white;
+  }
+  
+  .buttons button:not(.favorited) {
+    background-color: #2196f3;
+    color: white;
+  }

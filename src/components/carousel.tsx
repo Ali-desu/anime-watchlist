@@ -48,6 +48,7 @@ const Carousel: React.FC<CarouselProps> = ({ topAnime }) => {
                         <div className="carousel-item" key={anime.mal_id}>
                             <AnimeCard
                                 key={anime.mal_id}
+                                id={anime.mal_id.toString()}
                                 imageUrl={anime.images.jpg.image_url}
                                 title={anime.title}
                                 rating={anime.score}

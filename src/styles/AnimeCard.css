@@ -1,7 +1,7 @@
 .anime-card {
   border: 1px solid #ddd;
   border-radius: 8px;
-  height: 250px; /* Set a fixed height for consistency */
+  height: 150px; /* Set a fixed height for consistency */
   text-align: left;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); 
   display: flex;
@@ -11,8 +11,7 @@
 }
 
 .anime-card-image {
-  width:200px; /* Set fixed width for the image */
-  height: 100%; /* Match the height of the card */
+  width:auto;
   object-fit: cover; /* Ensure the image fits nicely */
 }
 
@@ -21,6 +20,7 @@
   flex-direction: column;
   justify-content: center;
   padding: 10px;
+  width:12rem;
   font-size: 14px; /* Adjust font size */
 }
 

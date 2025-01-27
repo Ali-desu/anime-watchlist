@@ -1,0 +1,51 @@
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #1a1a1a; /* Slightly lighter black for better contrast */
+    border: 1px solid #ffffff; /* Keep the white border */
+    color: #ffffff; /* White text for readability */
+    border-radius: 10px; /* Rounded corners */
+    max-width: 600px;
+    margin: 20px auto; /* Center the content */
+    font-size: 0.8rem;
+}
+
+.profile-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.profile h1 {
+  font-size: 2rem;
+  margin-bottom: 5px;
+  color: #ffcc00; /* Highlight the title in yellow */
+}
+
+.profile p {
+  margin: 5px 0;
+}
+
+.profile-details {
+  width: 100%;
+}
+
+.profile-details h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #ffcc00; /* Highlight the section title in yellow */
+}
+
+.profile-details p {
+  margin: 5px 0;
+}

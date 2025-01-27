@@ -1,27 +1,33 @@
 import { useEffect, useState } from 'react';
 import videoWeb from '../assets/video4.mp4';
 import '../styles/Home.css';
-import { fetchTopAnime } from '../services/animeApi';
-import AnimeCard from './AnimeCard';
+import {fetchTrendingAnime} from '../services/animeApi';
 import Carousel from './carousel'; // Importing the Carousel component
+import SearchBar from './SearchBar';
 
 const Hero = () => {
-  const [topAnime, setTopAnime] = useState<{ mal_id: number; title: string; image_url: string; score: number }[]>([]);
+  const [trendingAnime, setTrendingAnime] = useState<{ mal_id: number; title: string; image_url: string; score: number }[]>([]);
 
   useEffect(() => {
-    const getTopAnime = async () => {
-      const data = await fetchTopAnime();
-      setTopAnime(data);
+    const fetchData = async () => {
+      try {
+        const [ trendingData] = await Promise.all([fetchTrendingAnime()]);
+        setTrendingAnime(trendingData);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
     };
-    getTopAnime();
+    fetchData();
   }, []);
+  
 
   return (
     <>    
       <div className="hero-section">
         <div className="hero-content">
-          <h2>welcome to Kurosaw</h2>
-          <p>Discover, Discuss And Keep Track Of Your Animes</p>
+        <h2 className="hero-title">Welcome to <span>Kurosaw</span></h2>
+        <p className="hero-subtitle">Explore. Engage. Track Your Favorite Anime Adventures.</p>
+
         </div>
         <video autoPlay loop muted className="background-video">
           <source src={videoWeb} type="video/mp4" />
@@ -31,10 +37,11 @@ const Hero = () => {
       
       <div>
         <div className="anime-container">
-          <h2>Top Anime</h2>
-          <Carousel topAnime={topAnime} /> {/* Integrating the Carousel component */}
+          <h2>Popular Animes</h2>
+          <Carousel topAnime={trendingAnime} /> {/* Integrating the Carousel component */}
         </div>
       </div>
+
     </>
   );
 };

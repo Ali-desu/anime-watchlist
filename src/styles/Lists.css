@@ -1,0 +1,17 @@
+.lists{
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+    max-width: 800px;
+}
+
+.list-links{
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    padding: 1rem;
+    margin: 0;
+    margin:0 auto;
+}
+
+.list-links li

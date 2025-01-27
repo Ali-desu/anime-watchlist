@@ -1,0 +1,113 @@
+The Jikan API provides a wide range of data about anime, including various lists and details. Here’s what you can fetch besides the **top anime**:
+
+---
+
+### **1. Anime Lists**
+- **Top Anime**: 
+  - Fetch the top anime based on rankings.
+  - Example: `https://api.jikan.moe/v4/top/anime`
+
+- **Seasonal Anime**:
+  - Fetch anime for a specific season and year.
+  - Example: `https://api.jikan.moe/v4/seasons/{year}/{season}` (e.g., `2023/spring`).
+  - You can also get the **current season**: `https://api.jikan.moe/v4/seasons/now`.
+
+- **Upcoming Anime**:
+  - List of anime scheduled for future release.
+  - Example: `https://api.jikan.moe/v4/top/anime?filter=upcoming`.
+
+- **Most Popular Anime**:
+  - Use the `filter` parameter with `https://api.jikan.moe/v4/top/anime?filter=bypopularity`.
+
+- **Search by Genre**:
+  - Fetch anime by specific genres or themes.
+  - Example: `https://api.jikan.moe/v4/anime?genres={genre_id}`.
+  - Find genre IDs in the documentation (e.g., Action = 1, Comedy = 4, etc.).
+
+---
+
+### **2. Anime Details**
+- **Detailed Anime Information**:
+  - Get comprehensive details about a specific anime by ID.
+  - Example: `https://api.jikan.moe/v4/anime/{id}`.
+  - Includes synopsis, episodes, studios, genres, themes, score, popularity, etc.
+
+- **Anime Recommendations**:
+  - Get recommended anime based on a specific anime.
+  - Example: `https://api.jikan.moe/v4/anime/{id}/recommendations`.
+
+- **Related Anime**:
+  - Fetch adaptations, sequels, prequels, etc.
+  - Included in `https://api.jikan.moe/v4/anime/{id}/relations`.
+
+- **Streaming Links**:
+  - Available streaming platforms for the anime.
+  - Included in the detailed anime response.
+
+---
+
+### **3. Search**
+- **Search for Anime**:
+  - Custom search with filters like title, genre, status, rating, and more.
+  - Example: `https://api.jikan.moe/v4/anime?q={query}&status={status}&genres={genre_id}&order_by={field}&sort={asc/desc}`.
+  - Parameters include:
+    - `status` (airing, completed, etc.).
+    - `order_by` (score, popularity, rank, etc.).
+    - `sort` (asc, desc).
+
+---
+
+### **4. Characters & Staff**
+- **Anime Characters**:
+  - Fetch the list of characters for a specific anime.
+  - Example: `https://api.jikan.moe/v4/anime/{id}/characters`.
+
+- **Anime Staff**:
+  - Get information about the staff behind an anime.
+  - Example: `https://api.jikan.moe/v4/anime/{id}/staff`.
+
+---
+
+### **5. Manga**
+- Similar options are available for manga:
+  - Top Manga: `https://api.jikan.moe/v4/top/manga`.
+  - Search Manga: `https://api.jikan.moe/v4/manga?q={query}`.
+
+---
+
+### **6. User Information**
+- If you integrate MyAnimeList user data:
+  - User profiles: `https://api.jikan.moe/v4/users/{username}`.
+  - User anime lists: `https://api.jikan.moe/v4/users/{username}/animelist`.
+
+---
+
+### **7. Miscellaneous**
+- **Genres**:
+  - Fetch all available anime genres.
+  - Example: `https://api.jikan.moe/v4/genres/anime`.
+
+- **Schedule**:
+  - Anime airing schedule for specific days.
+  - Example: `https://api.jikan.moe/v4/schedules`.
+
+- **News**:
+  - Latest news related to anime.
+  - Example: `https://api.jikan.moe/v4/anime/{id}/news`.
+
+- **Videos**:
+  - Trailers and promotional videos for anime.
+  - Example: `https://api.jikan.moe/v4/anime/{id}/videos`.
+
+- **Statistics**:
+  - Popularity, score, and ranking stats for an anime.
+  - Example: `https://api.jikan.moe/v4/anime/{id}/statistics`.
+
+---
+
+### Customization Tips:
+You can mix and match filters like `order_by`, `genres`, and `filter` to create custom lists, such as:
+- **Highest Rated Action Anime**: `https://api.jikan.moe/v4/anime?genres=1&order_by=score&sort=desc`.
+- **Popular New Releases**: Combine season filters with popularity sorting.
+
+Let me know if you need help implementing any of these features! 😊
